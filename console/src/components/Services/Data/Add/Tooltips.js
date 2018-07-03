@@ -3,7 +3,7 @@ import Tooltip from 'react-bootstrap/lib/Tooltip';
 
 export const databaseNamingScheme = (
   <Tooltip id="tooltip-database-naming-scheme">
-    Recommend using snake_case naming convertion for table and columns. eg:
+    Recommend using snake_case naming convention for table and columns. eg:
     product_skus
   </Tooltip>
 );
