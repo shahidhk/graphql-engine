@@ -369,11 +369,21 @@ httpApp corsCfg serverCtx enableConsole enableTelemetry = do
         legacyQueryHandler (TableName tableName) queryType
 
     when enableGraphQL $ do
+      -- FIXME(shahidhk) deprecate v1alpha1
       post "v1alpha1/graphql/explain" $ mkSpockAction encodeQErr serverCtx $ do
         expQuery <- parseBody
         gqlExplainHandler expQuery
 
+      post "v1/graphql/explain" $ mkSpockAction encodeQErr serverCtx $ do
+        expQuery <- parseBody
+        gqlExplainHandler expQuery
+
+      -- FIXME(shahidhk) deprecate v1alpha1
       post "v1alpha1/graphql" $ mkSpockAction GH.encodeGQErr serverCtx $ do
+        query <- parseBody
+        v1Alpha1GQHandler query
+
+      post "v1/graphql" $ mkSpockAction GH.encodeGQErr serverCtx $ do
         query <- parseBody
         v1Alpha1GQHandler query
 
