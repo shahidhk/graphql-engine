@@ -250,8 +250,8 @@ v1QueryHandler query = do
             newSc { scGCtxMap = mergedGCtxMap, scDefaultRemoteGCtx = defGCtx }
       return (resp, newSc')
 
-v1Alpha1GQHandler :: GH.GraphQLRequest -> Handler BL.ByteString
-v1Alpha1GQHandler query = do
+v1GQHandler :: GH.GraphQLRequest -> Handler BL.ByteString
+v1GQHandler query = do
   userInfo <- asks hcUser
   reqBody <- asks hcReqBody
   reqHeaders <- asks hcReqHeaders
@@ -381,11 +381,11 @@ httpApp corsCfg serverCtx enableConsole enableTelemetry = do
       -- FIXME(shahidhk) deprecate v1alpha1
       post "v1alpha1/graphql" $ mkSpockAction GH.encodeGQErr serverCtx $ do
         query <- parseBody
-        v1Alpha1GQHandler query
+        v1GQHandler query
 
       post "v1/graphql" $ mkSpockAction GH.encodeGQErr serverCtx $ do
         query <- parseBody
-        v1Alpha1GQHandler query
+        v1GQHandler query
 
         -- get "v1alpha1/graphql/schema" $
         --   mkSpockAction encodeQErr serverCtx v1Alpha1GQSchemaHandler
