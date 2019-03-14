@@ -1,5 +1,5 @@
 - description: User cannot access remarks column
-  url: /v1alpha1/graphql
+  url: /v1/graphql
   status: 400
   headers:
     X-Hasura-Role: user
@@ -14,7 +14,7 @@
         }
       }
 - description: Admin can access remarks column
-  url: /v1alpha1/graphql
+  url: /v1/graphql
   status: 200
   response:
     data:

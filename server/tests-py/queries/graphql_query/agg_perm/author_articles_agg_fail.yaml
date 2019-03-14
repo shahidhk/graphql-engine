@@ -1,5 +1,5 @@
 description: Select author with it's article aggregations with user role (Error)
-url: /v1alpha1/graphql
+url: /v1/graphql
 status: 400
 headers:
   X-Hasura-Role: user

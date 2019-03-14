@@ -41,7 +41,7 @@ class TestHorizantalScaleBasic():
             time.sleep(30)
             # validate data
             response = hge_ctx.http.post(
-                self.servers[step['validate']['server']] + "/v1alpha1/graphql",
+                self.servers[step['validate']['server']] + "/v1/graphql",
                 json=step['validate']['query']
             )
             st_code = response.status_code

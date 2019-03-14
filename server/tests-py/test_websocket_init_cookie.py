@@ -11,7 +11,7 @@ if not pytest.config.getoption("--test-ws-init-cookie"):
 
 
 def url(hge_ctx):
-    ws_url = urlparse(hge_ctx.hge_url)._replace(scheme='ws', path='/v1alpha1/graphql')
+    ws_url = urlparse(hge_ctx.hge_url)._replace(scheme='ws', path='/v1/graphql')
     return ws_url.geturl()
 
 class TestWebsocketInitCookie():

@@ -1,5 +1,5 @@
 description: Insert into author table as user role (Unique Constraint Error)
-url: /v1alpha1/graphql
+url: /v1/graphql
 status: 400
 query:
   query: |

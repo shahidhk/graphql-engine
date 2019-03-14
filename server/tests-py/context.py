@@ -105,7 +105,7 @@ class HGECtx:
 
         self.ws_url = urlparse(hge_url)
         self.ws_url = self.ws_url._replace(scheme='ws')
-        self.ws_url = self.ws_url._replace(path='/v1alpha1/graphql')
+        self.ws_url = self.ws_url._replace(path='/v1/graphql')
         self.ws = websocket.WebSocketApp(self.ws_url.geturl(), on_message=self._on_message)
         self.wst = threading.Thread(target=self.ws.run_forever)
         self.wst.daemon = True

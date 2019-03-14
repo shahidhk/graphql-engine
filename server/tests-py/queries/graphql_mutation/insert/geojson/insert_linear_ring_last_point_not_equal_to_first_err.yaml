@@ -1,5 +1,5 @@
 description: Inserting as polygon with last and first point not being same; error
-url: /v1alpha1/graphql
+url: /v1/graphql
 status: 400
 response:
   errors:

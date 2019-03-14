@@ -1,5 +1,5 @@
 description: Users cannot update id of his article
-url: /v1alpha1/graphql
+url: /v1/graphql
 headers:
   X-Hasura-Role: user
   X-Hasura-User-Id: '1'
