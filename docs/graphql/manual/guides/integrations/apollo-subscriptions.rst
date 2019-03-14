@@ -38,12 +38,12 @@ below these imports initialise your client to fetch subscriptions along with que
 .. code-block:: js
 
   const httpLink = new HttpLink({
-    uri: "https://<your-app>/v1alpha1/graphql",
+    uri: "https://<your-app>/v1/graphql",
   });
 
   // Create a WebSocket link:
   const wsLink = new WebSocketLink({
-    uri: "ws://<your-app>/v1alpha1/graphql",
+    uri: "ws://<your-app>/v1/graphql",
     options: {
       reconnect: true
     }

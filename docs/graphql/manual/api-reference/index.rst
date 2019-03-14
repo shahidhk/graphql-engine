@@ -11,7 +11,7 @@ GraphQL API
 
 All GraphQL requests for queries, subscriptions and mutations are made to the GraphQL API.
 
-All requests are ``POST`` requests to the ``/v1alpha1/graphql`` endpoint.
+All requests are ``POST`` requests to the ``/v1/graphql`` endpoint.
 
 Request types
 ^^^^^^^^^^^^^
