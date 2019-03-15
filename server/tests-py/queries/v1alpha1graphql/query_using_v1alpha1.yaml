@@ -1,0 +1,18 @@
+description: Query GraphQL via v1alpha1 API
+url: /v1alpha1/graphql
+status: 200
+response:
+  data:
+    author:
+    - id: 1
+      name: author1
+    - id: 2
+      name: author2
+query:
+  query: |
+    query {
+      author {
+        id
+        name
+      }
+    }

@@ -2,6 +2,14 @@ import yaml
 from validate import check_query_f
 from super_classes import DefaultTestSelectQueries
 
+class TestV1Alpha1GraphQLAPI(DefaultTestSelectQueries):
+
+    def test_query_using_v1alpha1(self, hge_ctx):
+        check_query_f(hge_ctx, self.dir() + '/query_using_v1alpha1.yaml')
+
+    @classmethod
+    def dir(cls):
+        return 'queries/v1alpha1graphql'
 
 class TestGraphQLQueryBasic(DefaultTestSelectQueries):
 
