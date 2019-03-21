@@ -353,6 +353,9 @@ httpApp corsCfg serverCtx enableConsole enableTelemetry = do
     -- API Console and Root Dir
     when (enableConsole && enableMetadata) serveApiConsole
 
+    get "healthz" $ do
+      text "OK"
+
     get "v1/version" $ do
       uncurry setHeader jsonHeader
       lazyBytes $ encode $ object [ "version" .= currentVersion ]
